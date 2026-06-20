@@ -74,8 +74,11 @@ body{
 }
 
 .container {
+
   width: 487px;
-  height: 396px;
+  min-height: 396px;
+  height: auto;
+
   background-color: white;
   padding: 24px;
   border-radius: 50px;
