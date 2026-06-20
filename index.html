@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Egg Cooking Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+          
+    <!-- Screen 1 -->
+    <div id="screen-select" class="screen active">
+  
+      <div class="wrapper">
+    <div class="title">
+      <h1>Egg Cooking Timer</h1>
+      <img src="image/boiledFace.png" alt="Egg Character" class="character-egg">
+    </div>
+
+    
+    <div class="container">
+
+      <h3 class="select">Select Egg Type</h3>
+    
+      
+      <div class="egg-card" onclick="selectEgg('boiled')">
+        <img src="image/boiled.png" alt="Boiled Egg" class="boil"/>
+        <p>Boiled Egg</p>
+      </div>
+
+      <div class="egg-card" onclick="selectEgg('fried')">
+        <img src="image/fried.png" alt="Fried Egg" class="fried"/>
+        <p>Fried Egg</p>
+      </div>
+
+      <div class="egg-card" onclick="selectEgg('scramble')">
+        <img src="image/scramble.png" alt="Scramble Egg" class="scramble"/>
+        <p>Scramble Egg</p>
+      </div>
+
+      <div class="egg-card" onclick="selectEgg('omelet')">
+        <img src="image/omelet.png" alt="Omelet" class="omelet"/>
+        <p>Omelet</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+    <!-- Screen 2: only for boiled -->
+<div id="screen-boiled-style" class="screen">
+
+  <div class="wrapper">
+
+    <div class="title">
+      <h1>Boiled Egg</h1>
+      <img src="image/boiledFace.png" alt="Egg Character" class="character-egg">
+    </div>
+
+    <div class="container boiled-container">
+      <h3 class="select">How would you like it cooked?</h3>
+
+      <div class="egg-card" onclick="selectBoiledStyle('soft')">
+        <img src="image/soft.png" alt="Soft Boiled" class="boil-style"/>
+        <p>Soft Boiled</p>
+      </div>
+
+      <div class="egg-card" onclick="selectBoiledStyle('medium')">
+        <img src="image/medium.png" alt="Medium Boiled" class="boil-style"/>
+        <p>Medium Boiled</p>
+      </div>
+
+      <div class="egg-card hard-boiled-card" onclick="selectBoiledStyle('hard')">
+  <img src="image/hard.png" alt="Hard Boiled" class="boil-style"/>
+  <p>Hard Boiled</p>
+</div>
+
+<button type="button" class="back-button" onclick="goBack()">← Back</button>
+    </div>
+
+  </div>
+
+</div>
+
+    
+    <!-- Screen 3: Timer -->
+<div id="screen-timer" class="screen">
+
+  <div class="wrapper">
+
+    <div class="title">
+      <h1 id="egg-title">Boiled Egg</h1>
+      <img src="image/boiledFace.png" alt="Egg Character" class="character-egg">
+    </div>
+
+    <div class="container timer-container">
+
+  <div class="timer-top-row">
+    <div class="timer-info">
+      <p id="egg-type-label">Egg Type: Boiled Egg</p>
+
+    </div>
+    <img id="egg-image" src="image/boiled.png" alt="Egg" class="timer-egg-image"/>
+  </div>
+
+  <p id="timer-display" class="timer-display">12:00</p>
+
+  <div class="timer-buttons">
+    <button type="button" onclick="startTimer()">Start</button>
+    <button type="button" onclick="editTime()">Edit Time</button>
+    <button type="button" onclick="stopTimer()">Stop</button>
+  </div>
+
+  <p id="recommended-time">Recommended Time: 12 Minutes</p>
+
+  <button type="button" class="back-button" onclick="goBack()">← Back</button>
+
+</div>
+
+  </div>
+
+</div>
+
+<!-- Edit Time Modal -->
+<div id="edit-modal" class="modal-overlay">
+  <div class="modal-box">
+    <h3>Edit Time</h3>
+    <p>How many minutes?</p>
+    <input type="number" id="edit-minutes-input" min="1" placeholder="Minutes">
+    <div class="modal-buttons">
+      <button type="button" onclick="confirmEditTime()">Confirm</button>
+      <button type="button" onclick="closeEditModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<audio id="timer-sound" src="sounds/timer-done.wav"></audio>
+<audio id="bg-music" src="sounds/background-music.mp3" loop></audio>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
