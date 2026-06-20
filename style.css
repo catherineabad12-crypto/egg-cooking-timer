@@ -27,6 +27,8 @@ body{
   background-size: 400px;
   background-position: center;
   width: 551px;
+  max-width: 95vw;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
@@ -75,9 +77,8 @@ body{
 
 .container {
 
-  width: 487px;
-  min-height: 396px;
-  height: auto;
+  width: calc(100% - 64px);
+  max-width: 487px;
 
   background-color: white;
   padding: 24px;
@@ -104,24 +105,20 @@ body{
   text-align: center;
 }
 
-.container .boil{
-  grid-area: select;
-  text-align: center;
+.egg-card:nth-child(2) {
+  grid-area: boil;
 }
 
-.container .fried{
-  grid-area: select;
-  text-align: center;
+.egg-card:nth-child(3) {
+  grid-area: fried;
 }
 
-.container .scramble{
-  grid-area: select;
-  text-align: center;
+.egg-card:nth-child(4) {
+  grid-area: scramble;
 }
 
-.container .omelet{
-  grid-area: select;
-  text-align: center;
+.egg-card:nth-child(5) {
+  grid-area: omelet;
 }
 
 /*Screen 2*/
@@ -305,4 +302,13 @@ body{
 
 .modal-buttons button:hover {
   background-color: #e0b430;
+}
+
+@media (max-width: 600px) {
+  .boil:hover,
+  .fried:hover,
+  .scramble:hover,
+  .omelet:hover {
+    transform: scale(1.1);
+  }
 }
